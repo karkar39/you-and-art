@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 О проекте
+## О проекте
 
 Проект представляет собой веб-приложение для:
 - Просмотра афиши мероприятий
@@ -30,6 +30,19 @@
 - OpenServer или XAMPP
 - PHP 7.4 или выше
 - MySQL
+
+ИНСТРУКЦИЯ ПО ЗАПУСКУ:
+
+1. Установи OpenServer/XAMPP
+2. Запусти Apache и MySQL
+3. Зайди в phpMyAdmin: http://localhost/phpmyadmin
+4. Создай базу данных с именем youandart
+5. Импортируй файл database.sql (вкладка Импорт)
+6. Папку you-and-art скопируй в C:\OSPanel\domains\ (или htdocs)
+7. Открой http://localhost/you-and-art/index.php
+
+Логин админа: admin@youandart.ru
+Пароль: admin123
 
 ### Пошаговая инструкция
 
