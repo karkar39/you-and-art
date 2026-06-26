@@ -49,30 +49,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
 <div class="auth-container">
     <div class="auth-tabs">
-        <button class="tab-btn active" onclick="showTab('login')">🔐 Вход</button>
-        <button class="tab-btn" onclick="showTab('register')">📝 Регистрация</button>
+        <button class="tab-btn active" onclick="showTab('login')">Вход</button>
+        <button class="tab-btn" onclick="showTab('register')">Регистрация</button>
     </div>
     
     <div id="login-tab" class="auth-form">
         <h2>Вход в аккаунт</h2>
         <?php if(isset($error) && !isset($_POST['register'])): ?>
-            <p class="error">❌ <?= $error ?></p>
+            <p class="error"><?= $error ?></p>
         <?php endif; ?>
         <form method="POST">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Пароль" required>
             <button type="submit" name="login">Войти</button>
         </form>
-        <p class="admin-hint">👑 Админ: admin@youandart.ru / admin123</p>
+        <p class="admin-hint">Админ: admin@yaa.com / 12345678</p>
     </div>
     
     <div id="register-tab" class="auth-form" style="display:none">
         <h2>Регистрация</h2>
         <?php if(isset($error) && isset($_POST['register'])): ?>
-            <p class="error">❌ <?= $error ?></p>
+            <p class="error"><?= $error ?></p>
         <?php endif; ?>
         <?php if(isset($success)): ?>
-            <p class="success">✅ <?= $success ?></p>
+            <p class="success"><?= $success ?></p>
         <?php endif; ?>
         <form method="POST">
             <input type="text" name="name" placeholder="Имя" required>

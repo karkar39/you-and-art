@@ -39,19 +39,19 @@ $events = $pdo->query("SELECT * FROM events ORDER BY date DESC")->fetchAll();
 <?php include '../header.php'; ?>
 
 <div class="admin-container">
-    <h2>⚙️ Админ-панель</h2>
+    <h2>Админ-панель</h2>
     
     <div class="stats-grid">
-        <div class="stat-card">📅 Мероприятий: <?= $stats['events'] ?></div>
-        <div class="stat-card">📦 Заказов: <?= $stats['orders'] ?></div>
-        <div class="stat-card">💰 Выручка: <?= number_format($stats['revenue'], 0, '', ' ') ?> ₽</div>
-        <div class="stat-card">👥 Пользователей: <?= $stats['users'] ?></div>
+        <div class="stat-card">Мероприятий: <?= $stats['events'] ?></div>
+        <div class="stat-card">Заказов: <?= $stats['orders'] ?></div>
+        <div class="stat-card">Выручка: <?= number_format($stats['revenue'], 0, '', ' ') ?> ₽</div>
+        <div class="stat-card">Пользователей: <?= $stats['users'] ?></div>
     </div>
     
     <div class="add-event-form">
-        <h3>➕ Добавить мероприятие</h3>
+        <h3>+ Добавить мероприятие</h3>
         <?php if(isset($success)): ?>
-            <p class="success">✅ <?= $success ?></p>
+            <p class="success"><?= $success ?></p>
         <?php endif; ?>
         <form method="POST">
             <input type="text" name="title" placeholder="Название" required>
@@ -60,21 +60,21 @@ $events = $pdo->query("SELECT * FROM events ORDER BY date DESC")->fetchAll();
             <input type="date" name="date" required>
             <input type="time" name="time" required>
             <select name="genre">
-                <option value="Театр">🎭 Театр</option>
-                <option value="Концерт">🎵 Концерт</option>
-                <option value="Выставка">🎨 Выставка</option>
-                <option value="Кино">🎬 Кино</option>
+                <option value="Театр">Театр</option>
+                <option value="Концерт">Концерт</option>
+                <option value="Выставка">Выставка</option>
+                <option value="Кино">Кино</option>
             </select>
             <input type="text" name="image_url" placeholder="URL картинки" value="https://via.placeholder.com/300x200">
             <input type="number" name="capacity" placeholder="Вместимость" value="80">
             <input type="text" name="age_rating" placeholder="Возрастной рейтинг" value="12+">
             <input type="number" name="duration" placeholder="Длительность (мин)" value="120">
-            <button type="submit" name="add_event">➕ Добавить</button>
+            <button type="submit" name="add_event">+ Добавить</button>
         </form>
     </div>
     
     <div class="events-list">
-        <h3>📋 Список мероприятий</h3>
+        <h3>Список мероприятий</h3>
         <table>
             <thead>
                 <tr><th>Название</th><th>Дата</th><th>Цена</th><th>Действия</th></tr>
@@ -85,7 +85,7 @@ $events = $pdo->query("SELECT * FROM events ORDER BY date DESC")->fetchAll();
                     <td><?= htmlspecialchars($event['title']) ?></td>
                     <td><?= date('d.m.Y', strtotime($event['date'])) ?></td>
                     <td><?= number_format($event['price'], 0, '', ' ') ?> ₽</td>
-                    <td><a href="admin.php?delete_event=<?= $event['id'] ?>" onclick="return confirm('Удалить мероприятие?')" style="color:#e74c3c;">🗑️ Удалить</a></td>
+                    <td><a href="admin.php?delete_event=<?= $event['id'] ?>" onclick="return confirm('Удалить мероприятие?')" style="color:#e74c3c;">Удалить</a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

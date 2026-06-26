@@ -14,19 +14,19 @@ $bookings = $stmt->fetchAll();
 <?php include '../header.php'; ?>
 
 <div class="profile-container">
-    <h2>👤 Личный кабинет</h2>
+    <h2>Личный кабинет</h2>
     
     <div class="user-info">
         <h3>Информация о вас</h3>
-        <p><strong>👋 Имя:</strong> <?= htmlspecialchars($_SESSION['user_name']) ?></p>
-        <p><strong>📧 Email:</strong> <?= htmlspecialchars($_SESSION['user_email']) ?></p>
+        <p><strong>Имя:</strong> <?= htmlspecialchars($_SESSION['user_name']) ?></p>
+        <p><strong>Email:</strong> <?= htmlspecialchars($_SESSION['user_email']) ?></p>
     </div>
     
     <div class="bookings-history">
-        <h3>📋 История бронирований</h3>
+        <h3>История бронирований</h3>
         <?php if(empty($bookings)): ?>
-            <p>😔 У вас пока нет бронирований</p>
-            <a href="events.php"><button>🎫 Перейти к афише</button></a>
+            <p>У вас пока нет бронирований</p>
+            <a href="events.php"><button>Перейти к афише</button></a>
         <?php else: ?>
             <?php foreach($bookings as $booking): 
                 $stmt2 = $pdo->prepare("SELECT title, date FROM events WHERE id = ?");
@@ -34,12 +34,12 @@ $bookings = $stmt->fetchAll();
                 $event = $stmt2->fetch();
             ?>
             <div class="booking-card">
-                <p><strong>🎭 <?= htmlspecialchars($event['title']) ?></strong></p>
-                <p>📅 <?= date('d.m.Y', strtotime($event['date'])) ?></p>
-                <p>🎫 <?= $booking['quantity'] ?> билетов</p>
-                <p>💰 <?= number_format($booking['total_price'], 0, '', ' ') ?> ₽</p>
-                <p>Статус: <?= $booking['status'] == 'paid' ? '✅ Оплачен' : '⏳ Ожидает' ?></p>
-                <p>🔢 Номер заказа: <?= $booking['order_number'] ?></p>
+                <p><strong><?= htmlspecialchars($event['title']) ?></strong></p>
+                <p><?= date('d.m.Y', strtotime($event['date'])) ?></p>
+                <p><?= $booking['quantity'] ?> билетов</p>
+                <p><?= number_format($booking['total_price'], 0, '', ' ') ?> ₽</p>
+                <p>Статус: <?= $booking['status'] == 'paid' ? 'Оплачен' : 'Ожидает' ?></p>
+                <p>Номер заказа: <?= $booking['order_number'] ?></p>
             </div>
             <?php endforeach; ?>
         <?php endif; ?>

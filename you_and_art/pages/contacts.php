@@ -15,10 +15,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send_feedback'])) {
     
     <div class="contacts-grid">
         <div class="contacts-info">
-            <p>📍 <strong>Адрес:</strong> Москва, ул. Арбат, 10</p>
-            <p>📞 <strong>Телефон:</strong> +7 (999) 123-45-67</p>
-            <p>✉️ <strong>Email:</strong> info@youandart.ru</p>
-            <p>🕐 <strong>Режим работы:</strong> Пн-Вс: 10:00 - 22:00</p>
+            <p><strong>Адрес:</strong> Москва, ул. Арбат, 10</p>
+            <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+            <p><strong>Email:</strong> info@youandart.ru</p>
+            <p><strong>Режим работы:</strong> Пн-Вс: 10:00 - 22:00</p>
         </div>
         
         <div class="feedback-form">

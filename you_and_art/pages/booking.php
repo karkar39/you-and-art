@@ -30,11 +30,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
     <div class="booking-event-info">
         <h2><?= htmlspecialchars($event['title']) ?></h2>
         <p><?= htmlspecialchars($event['description']) ?></p>
-        <p>📅 <?= date('d.m.Y', strtotime($event['date'])) ?> в <?= $event['time'] ?></p>
-        <p>🎭 <?= $event['genre'] ?></p>
-        <p>⏱️ Длительность: <?= $event['duration'] ?> мин</p>
-        <p>🔞 <?= $event['age_rating'] ?></p>
-        <p>💰 Цена билета: <?= number_format($event['price'], 0, '', ' ') ?> ₽</p>
+        <p><?= date('d.m.Y', strtotime($event['date'])) ?> в <?= $event['time'] ?></p>
+        <p><?= $event['genre'] ?></p>
+        <p>Длительность: <?= $event['duration'] ?> мин</p>
+        <p><?= $event['age_rating'] ?></p>
+        <p>Цена билета: <?= number_format($event['price'], 0, '', ' ') ?> ₽</p>
     </div>
     
     <div class="booking-form">
@@ -50,10 +50,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
             <div class="price-breakdown">
                 <p>Билеты: <span id="ticketsPrice"><?= number_format($event['price'], 0, '', ' ') ?></span> ₽</p>
                 <p>Сервисный сбор (5%): <span id="serviceFee"><?= number_format(round($event['price'] * 0.05), 0, '', ' ') ?></span> ₽</p>
-                <p class="total">💰 Итого: <span id="totalPrice"><?= number_format(round($event['price'] * 1.05), 0, '', ' ') ?></span> ₽</p>
+                <p class="total">Итого: <span id="totalPrice"><?= number_format(round($event['price'] * 1.05), 0, '', ' ') ?></span> ₽</p>
             </div>
             
-            <button type="submit" name="add_to_cart">🛒 Добавить в корзину</button>
+            <button type="submit" name="add_to_cart">Добавить в корзину</button>
         </form>
     </div>
 </div>
